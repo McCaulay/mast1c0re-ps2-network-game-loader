@@ -12,5 +12,5 @@ class Downloader
 public:
     static bool download(const char* filepath, uint16_t port);
 private:
-    static void setProgress(PS::Sce::MsgDialogProgressBar dialog, const char* basename, size_t downloaded, size_t total);
+    static void setProgress(PS::Sce::MsgDialogProgressBar dialog, size_t downloaded, size_t total);
 };

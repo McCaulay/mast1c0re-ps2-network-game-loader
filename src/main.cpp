@@ -22,13 +22,11 @@ void main()
         // Download ISO
         if (!Downloader::download(filepath, SERVER_PORT))
         {
+            PS::notification("Failed to download ISO");
             PS::Debug.printf("Failed to download ISO\n");
 
             // Disconnect from debug server
             PS::Debug.disconnect();
-
-            // Restore corruption
-            PS::Breakout::restore();
             return;
         }
     }
@@ -58,6 +56,7 @@ void main()
         return;
     }
 
+    PS::notification("Unexpected game code \"%s\"!", gameCode);
     PS::Debug.printf("Unexpected game code (%s) length of %i, expecting %i\n", gameCode, PS2::strlen(gameCode), 10);
 
     // Disconnect from debug server
