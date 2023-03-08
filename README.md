@@ -18,10 +18,10 @@ You can send an ISO file by using one of the following methods:
   * 6.72
   * 9.00
   * 10.01
+  * 10.50
 * PS5
   * 6.50
 
 ## Improvements
 * Upload and load config file "config-emu-ps4.txt" (https://www.psdevwiki.com/ps4/Talk:PS2_Classics_Emulator_Compatibility_List)
 * Emulator load lua file
-* Load PS2 games from USB
