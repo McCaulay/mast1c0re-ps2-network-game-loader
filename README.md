@@ -6,7 +6,6 @@ Requires a game save with the [mast1c0re-ps2-network-elf-loader](https://github.
 
 Currently the sent game is stored temporarily on disk, and is removed once the game is closed.</br>
 Therefore, it requires you to transfer the ISO each time you load the game loader.</br>
-However, this modified ELF will transfer the ISO at least 15x faster as the official version.
 
 ## Modifications in this version
 * This modified ELF will transfer the ISO at least 15x faster as the official version due to it's increased chunk size that can be received
