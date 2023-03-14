@@ -5,8 +5,8 @@
 
 void main()
 {
-    // Set pad light to purple
-    PS::PadSetLightBar(150, 0, 255, 255);
+    // Set pad light to lime green
+    PS::PadSetLightBar(150, 255, 0, 255);
 
     // Show "PS2 Game Loader" notification
     PS::notificationWithIcon("cxml://psnotification/tex_morpheus_trophy_platinum", "PS2 Game Loader (Network)");

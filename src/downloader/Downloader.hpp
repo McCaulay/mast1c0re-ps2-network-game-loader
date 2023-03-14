@@ -4,7 +4,7 @@
 #include "mast1c0re.hpp"
 
 #define MAGIC 0x0000EA6E
-#define DOWNLOAD_CHUNK_SIZE 4096
+#define DOWNLOAD_CHUNK_SIZE 63488
 #define DOWNLOAD_BAR_UPDATE_FREQUENCY 2500
 
 class Downloader
