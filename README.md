@@ -9,6 +9,7 @@ Therefore, it requires you to transfer the ISO each time you load the game loade
 
 ## Modifications in this version
 * This modified ELF will transfer the ISO at least 15x faster as the official version due to it's increased chunk size that can be received
+* A config file (*_cli.conf) can be received after the game has been transferred
 * Lime colored light bar to differentiate from the official Network Game Loader
 
 ## Sending an ISO with THIS modified ELF
@@ -26,7 +27,6 @@ You can send an ISO file by using the following method:
   * 6.50
 
 ## Improvements
-* Upload and load config file "config-emu-ps4.txt" (https://www.psdevwiki.com/ps4/Talk:PS2_Classics_Emulator_Compatibility_List)
 * Emulator load lua file
 
 ## Thanks
