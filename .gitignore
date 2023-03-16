@@ -1,3 +1,5 @@
+.vscode/
+
 # Build objects
 build/
 bin/

@@ -24,7 +24,7 @@ void main()
     if (!PS::Filesystem::exists(gameFilepath))
     {
         // Download ISO
-        if (!Downloader::downloadGame(gameFilepath, SERVER_PORT))
+        if (!Downloader::download(gameFilepath, "game", SERVER_PORT))
         {
             PS::notification("Failed to download ISO");
             PS::Debug.printf("Failed to download ISO\n");
@@ -36,16 +36,12 @@ void main()
     }
 
     // Open a new dialog to ask for the config file
-    char message[512];
-    PS2::sprintf(message, "Do you want to load a config file?", "Config Loader");
-    if (PS::Sce::MsgDialogUserMessage::show(message, PS::Sce::MsgDialog::ButtonType::YESNO))
+    if (PS::Sce::MsgDialogUserMessage::show("Do you want to load a config file?", PS::Sce::MsgDialog::ButtonType::YESNO))
     {
-        hasConfig = true;
-
         if (!PS::Filesystem::exists(configFilepath))
         {
-            // Download Config
-            if (!Downloader::downloadConfig(configFilepath, SERVER_PORT))
+            // Download config
+            if (!Downloader::download(configFilepath, "config", SERVER_PORT))
             {
                 // Failed to download config
                 PS::notification("Failed to download config");
@@ -55,6 +51,8 @@ void main()
                 PS::Debug.disconnect();
                 return;
             }
+
+            hasConfig = true;
         }
     }
 
@@ -70,7 +68,7 @@ void main()
         char* ps2Path = PS2::gameCodeToPath(gameCode);
 
         // Load configuration file
-        if (hasConfig == true)
+        if (hasConfig)
         {   
             PS::Debug.printf("Processing config %s\n", configFilepath);
             PS::ProcessConfigFile("./../av_contents/content_tmp/SCUS-97129_cli.conf");

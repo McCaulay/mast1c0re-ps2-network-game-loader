@@ -11,7 +11,7 @@ You can send an ISO file by using one of the following methods:
 * (GUI exe) Download "[mast1c0re-file-loader.exe](https://github.com/mast1c0re-ps2-network-elf-loader/releases/download/v0.1.1/mast1c0re-file-loader.exe)" in [releases](https://github.com/McCaulay/mast1c0re-ps2-network-elf-loader/tags)
 * (Python GUI) python3 [mast1c0re-file-loader.py](https://github.com/mast1c0re-ps2-network-elf-loader/blob/master/scripts/mast1c0re-file-loader.py)
 * (Command Line) python3 [mast1c0re-send-file.py](https://github.com/mast1c0re-ps2-network-elf-loader/blob/master/scripts/mast1c0re-send-file.py) --ip <ip> --file <path-to-iso>
-* (GUI) Download [OkageLibrary](https://github.com/SvenGDK/OkageLibrary/releases) - Supports both official and this modified ELF
+* (GUI) [OkageLibrary](https://github.com/SvenGDK/OkageLibrary/releases)
 
 ## Supported Systems & Firmware Versions
 * PS4
