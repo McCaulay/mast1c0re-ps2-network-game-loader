@@ -26,7 +26,7 @@ void main()
     if (!PS::Filesystem::exists(gameFilepath))
     {
         // Download ISO
-        if (!Downloader::download(gameFilepath, "game", SERVER_PORT, DOWNLOAD_CONFIG_CHUNK_SIZE))
+        if (!Downloader::download(gameFilepath, "game", SERVER_PORT, DOWNLOAD_GAME_CHUNK_SIZE))
         {
             PS::notification("Failed to download ISO");
             PS::Debug.printf("Failed to download ISO\n");
@@ -43,7 +43,7 @@ void main()
         if (!PS::Filesystem::exists(configFilepath))
         {
             // Download config
-            if (!Downloader::download(configFilepath, "config", SERVER_PORT, DOWNLOAD_GAME_CHUNK_SIZE))
+            if (!Downloader::download(configFilepath, "config", SERVER_PORT, DOWNLOAD_CONFIG_CHUNK_SIZE))
             {
                 // Failed to download config
                 PS::notification("Failed to download config");
