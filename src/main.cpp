@@ -5,14 +5,11 @@
 
 void main()
 {
-    // Set pad light to lime green
-    PS::PadSetLightBar(150, 255, 0, 255);
+    // Set pad light to purple
+    PS::PadSetLightBar(150, 0, 255, 255);
 
-    // Show "PS2 Network Game Loader" notification
-    PS::notificationWithIcon("cxml://psnotification/tex_morpheus_trophy_platinum", "PS2 Network Game Loader");
-
-    // Attach another notification
-    PS::notificationWithIcon("cxml://psnotification/tex_default_icon_download", "v0.1.5-Mod by SvenGDK");
+    // Show "PS2 Game Loader" notification
+    PS::notificationWithIcon("cxml://psnotification/tex_morpheus_trophy_platinum", "PS2 Game Loader (Network)");
 
     // Attempt to connect to debug server
     // PS::Debug.connect(IP(192, 168, 0, 7), 9023);
@@ -23,12 +20,12 @@ void main()
     const char* configFilepath = "/av_contents/content_tmp/SCUS-97129_cli.conf";
     bool hasConfig = false;
 
+    // Download ISO if doesn't exist
     if (!PS::Filesystem::exists(gameFilepath))
     {
         // Download ISO
         if (!Downloader::downloadGame(gameFilepath, SERVER_PORT))
         {
-            // Failed to download ISO
             PS::notification("Failed to download ISO");
             PS::Debug.printf("Failed to download ISO\n");
 
@@ -43,9 +40,6 @@ void main()
     PS2::sprintf(message, "Do you want to load a config file?", "Config Loader");
     if (PS::Sce::MsgDialogUserMessage::show(message, PS::Sce::MsgDialog::ButtonType::YESNO))
     {
-        // Set pad light to yellow
-        PS::PadSetLightBar(250, 230, 40, 255);
-
         hasConfig = true;
 
         if (!PS::Filesystem::exists(configFilepath))
