@@ -1,19 +1,16 @@
-# mast1c0re - PS2 Network Game Loader Mod
+# mast1c0re - PS2 Network Game Loader
 
 Load PS2 ISO games over the network using the [mast1c0re](https://github.com/McCaulay/mast1c0re) vulnerability.
 
-Requires a game save with the [mast1c0re-ps2-network-elf-loader](https://github.com/McCaulay/mast1c0re-ps2-network-elf-loader) to load the ELF file.
+Requires the [mast1c0re-ps2-network-elf-loader](https://github.com/McCaulay/mast1c0re-ps2-network-elf-loader) game save to load the ELF file.
 
-Currently the sent game is stored temporarily on disk, and is removed once the game is closed.</br>
-Therefore, it requires you to transfer the ISO each time you load the game loader.</br>
+Currently the sent game is stored temporarily on disk, and is removed once the game is closed. Therefore, it requires you to transfer the ISO each time you load the game loader.
 
-## Modifications in this version
-* This modified ELF will transfer the ISO at least 15x faster as the official version due to it's increased chunk size that can be received
-* A config file (*_cli.conf) can be received after the game has been transferred
-* Lime colored light bar to differentiate from the official Network Game Loader
-
-## Sending an ISO with THIS modified ELF
-You can send an ISO file by using the following method:
+## Sending an ISO
+You can send an ISO file by using one of the following methods:
+* (GUI exe) Download "[mast1c0re-file-loader.exe](https://github.com/mast1c0re-ps2-network-elf-loader/releases/download/v0.1.1/mast1c0re-file-loader.exe)" in [releases](https://github.com/McCaulay/mast1c0re-ps2-network-elf-loader/tags)
+* (Python GUI) python3 [mast1c0re-file-loader.py](https://github.com/mast1c0re-ps2-network-elf-loader/blob/master/scripts/mast1c0re-file-loader.py)
+* (Command Line) python3 [mast1c0re-send-file.py](https://github.com/mast1c0re-ps2-network-elf-loader/blob/master/scripts/mast1c0re-send-file.py) --ip <ip> --file <path-to-iso>
 * (GUI) Download [OkageLibrary](https://github.com/SvenGDK/OkageLibrary/releases) - Supports both official and this modified ELF
 
 ## Supported Systems & Firmware Versions
@@ -28,6 +25,3 @@ You can send an ISO file by using the following method:
 
 ## Improvements
 * Emulator load lua file
-
-## Thanks
-Big thanks to https://github.com/McCaulay and all his work!
