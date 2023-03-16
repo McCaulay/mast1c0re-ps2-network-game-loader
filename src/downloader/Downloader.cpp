@@ -1,6 +1,6 @@
 #include "Downloader.hpp"
 
-bool Downloader::download(const char* filepath, const char* fileType, uint16_t port)
+bool Downloader::download(const char* filepath, const char* fileType, uint16_t port, uint16_t chunkSize)
 {
     // Create TCP server
     PS::TcpServer server = PS::TcpServer();
@@ -68,10 +68,10 @@ bool Downloader::download(const char* filepath, const char* fileType, uint16_t p
 
         // Write file to disk from socket in chunks
         uint32_t updateBar = 0;
-        char buffer[DOWNLOAD_CHUNK_SIZE];
+        char buffer[MAX_DOWNLOAD_CHUNK_SIZE];
         while (true)
         {
-            size_t readCount = client.read(buffer, DOWNLOAD_CHUNK_SIZE);
+            size_t readCount = client.read(buffer, chunkSize);
             offset += readCount;
 
             size_t writeCount = PS::writeAll(fd, buffer, readCount);
@@ -94,7 +94,7 @@ bool Downloader::download(const char* filepath, const char* fileType, uint16_t p
             }
 
             // End of download
-            if (readCount != DOWNLOAD_CHUNK_SIZE)
+            if (readCount != chunkSize)
             {
                 PS::Debug.printf("Downloaded %lu bytes\n", offset);
                 break;

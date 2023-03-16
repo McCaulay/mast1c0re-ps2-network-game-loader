@@ -2,6 +2,8 @@
 #include "downloader/Downloader.hpp"
 
 #define SERVER_PORT 9045
+#define DOWNLOAD_GAME_CHUNK_SIZE 0xF800
+#define DOWNLOAD_CONFIG_CHUNK_SIZE 0x20
 
 void main()
 {
@@ -24,7 +26,7 @@ void main()
     if (!PS::Filesystem::exists(gameFilepath))
     {
         // Download ISO
-        if (!Downloader::download(gameFilepath, "game", SERVER_PORT))
+        if (!Downloader::download(gameFilepath, "game", SERVER_PORT, DOWNLOAD_CONFIG_CHUNK_SIZE))
         {
             PS::notification("Failed to download ISO");
             PS::Debug.printf("Failed to download ISO\n");
@@ -41,7 +43,7 @@ void main()
         if (!PS::Filesystem::exists(configFilepath))
         {
             // Download config
-            if (!Downloader::download(configFilepath, "config", SERVER_PORT))
+            if (!Downloader::download(configFilepath, "config", SERVER_PORT, DOWNLOAD_GAME_CHUNK_SIZE))
             {
                 // Failed to download config
                 PS::notification("Failed to download config");
