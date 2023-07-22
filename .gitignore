@@ -3,3 +3,4 @@
 # Build objects
 build/
 bin/
+.vscode/
