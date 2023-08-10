@@ -21,6 +21,7 @@ You can send an ISO file by using one of the following methods:
   * 10.01
   * 10.50
   * 10.70
+  * 10.71
 * PS5
   * 6.50
 
